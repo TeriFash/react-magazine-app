@@ -7,14 +7,15 @@ export default function CartTotals({ value }) {
     <React.Fragment>
       <div className="container">
         <div className="row">
-          <div className="col-10 mt-2 ml-sl-5 ml-md-auto col-sm-8 text-capitalize- text-right">
+          <div className="col-10 mt-2 ml-sl-5 ml-md-auto col-sm-8 text-capitalize text-right">
             <Link to="/">
               <button
-                className="btn btn-outline-danger text-uppercase mb-3 px-5"
+                className="btn text-uppercase mb-3 px-5 neumorphic-btn neumorphic-btn--danger"
                 type="button"
                 onClick={() => clearCart()}
               >
-                clear cart
+                clear all 
+                <i class="far fa-trash-alt ml-2" />
               </button>
             </Link>
             <h5>

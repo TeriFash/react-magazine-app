@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import "./App.scss";
+import "@fortawesome/fontawesome-free/js/all";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import Details from "./components/Details";
 import Cart from "./components/Cart";
 import Default from "./components/Default";
 import Modal from "./components/Modal";
+
+import "./App.scss";
 
 class App extends Component {
   render() {

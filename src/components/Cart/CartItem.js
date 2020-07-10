@@ -21,13 +21,13 @@ export default function CartItem({ item, value }) {
         <span className="d-lg-none">price : $ </span> {price}
       </div>
       <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center calculate-block">
           <div>
-            <span className="btn btn-black mx-1" onClick={() => decrement(id)}>
+            <span className="btn mx-1 neumorphic-btn neumorphic-btn--square" onClick={() => decrement(id)}>
               -
             </span>
-            <span className="btn btn-black mx-1">{count}</span>
-            <span className="btn btn-black mx-1" onClick={() => increment(id)}>
+            <span className="btn mx-3 neumorphic-btn neumorphic-btn--square">{count}</span>
+            <span className="btn mx-1 neumorphic-btn neumorphic-btn--square" onClick={() => increment(id)}>
               +
             </span>
           </div>
@@ -36,8 +36,8 @@ export default function CartItem({ item, value }) {
       {/*  */}
 
       <div className="col-10 mx-auto col-lg-2">
-        <div className="cart-icon">
-          <i className="fas fa-trash" onClick={() => removeItem(id)} />
+        <div className="cart-icon text-danger">
+          <i class="far fa-trash-alt" onClick={() => removeItem(id)} />
         </div>
       </div>
 

@@ -47,9 +47,9 @@ export default class Details extends Component {
                   </p>
                   <p className="text-muted lead">{info}</p>
                   {/* buttons */}
-                  <div>
+                  <div className="details-btn-block">
                     <Link to="/">
-                      <ButtonContainer className="neumorphic-btn">back to products</ButtonContainer>
+                      <ButtonContainer className="neumorphic-btn">Back to products</ButtonContainer>
                     </Link>
                     <ButtonContainer
                       className="neumorphic-btn"

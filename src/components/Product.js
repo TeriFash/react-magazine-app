@@ -8,11 +8,12 @@ export default class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <ProductWrapper className="col-9  mx-auto col-md-6 col-lg-3 my-3">
-        <div className="neumorphic-card mx-auto">
+      <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+        <div className="neumorphic-card ">
           <div className="neumorphic-card__outer">
             <ProductConsumer>
               {value => (
+                <>
                 <div
                   className="img-container p-5"
                   onClick={() => value.handleDetail(id)}
@@ -20,27 +21,31 @@ export default class Product extends Component {
                   <Link to="/details">
                     <img src={img} alt="product" className="card-img-top neumorphic-image" />
                   </Link>
-                  <button
-                    className="cart-btn neumorphic-btn-progress"
+                  
+                </div>
+                <button
+                    className="cart-btn neumorphic-btn-minimal"
                     disabled={inCart ? true : false}
                     onClick={() => {
                       value.addToCart(id);
                       value.openModal(id);
                     }}
                   >
-                    <div className="neumorphic-btn-progress__back">
-                      <div className="neumorphic-btn-progress__bg">
+                    <div className="neumorphic-btn-minimal__back">
+                      
                       {inCart ? (
                         <p className="text-capitalize mb-0" disabled>
                           In cart
                         </p>
                       ) : (
-                        <span>+</span>
+                        <span className="mr-2">
+                         <i className="fas fa-cart-plus" />
+                        </span>
                       )}
-                      </div>
+                      
                     </div>
                   </button>
-                </div>
+                  </>
               )}
             </ProductConsumer>
             {/* Card footer */}
@@ -76,8 +81,7 @@ const ProductWrapper = styled.div`
   }
   &:hover {
     .card {
-      border: 0.04rem solid rgba(0, 0, 0, 0.2);
-      box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+      
     }
     .card-footer {
      
@@ -94,25 +98,11 @@ const ProductWrapper = styled.div`
   }
   .cart-btn {
     
+    color: var(--main-blue);
+    font-size: 1rem;
     
-    position: absolute;
-    
-    bottom: -2px;
-    right: -2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
-    color: var(--main-white);
-    font-size: 1.1rem;
-    
-    transform: translate(100%, 100%);
+   
     transition: all 0.6s linear;
-  }
-
-  .cart-btn span {
-    font-size: 1.4rem;
   }
 
   .img-container:hover .cart-btn {
@@ -120,7 +110,7 @@ const ProductWrapper = styled.div`
   }
   .cart-btn:hover, .cart-btn:active, .cart-btn:focus {
     border: none;
-    color: var(--main-white);
+    
     cursor: pointer;
     outline: none;
   }
